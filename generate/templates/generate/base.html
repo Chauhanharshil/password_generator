@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Password Generator
+    </title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="topnav">
+        <a href="{% url 'index' %}">Password Generator</a>
+        
+
+    </div>
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <div class="footer">
+        created by Harshil Chauhan 2021
+    </div>
+</body>
+</html>
