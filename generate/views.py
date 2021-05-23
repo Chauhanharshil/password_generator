@@ -79,6 +79,7 @@ def password_gen(length,options):
 
 def home(request):
     if request.method == 'POST':
+        
         if request.POST.get('password_length'):
             password_len = int(request.POST['password_length'])
             options=[]
@@ -86,6 +87,10 @@ def home(request):
             option2=request.POST.get('upper_case',0) 
             option3=request.POST.get('number',0) 
             option4=request.POST.get('special_char',0)
+            options.append(option1)
+            options.append(option2)
+            options.append(option3)
+            options.append(option4)
             password = password_gen(password_len,options)
             if password == "":
                 context={

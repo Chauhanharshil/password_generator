@@ -1,10 +1,15 @@
 {% extends "generate/base.html" %}
+
 {% block content %}
 <form method="post">
     {% csrf_token %}
+
     {% if message %}
-    {{message}}<br />
+    <div class="alert alert-danger" role="alert">
+        {{message}}
+    </div>
     {% endif %}
+
     <select name="password_length" required>
         <option selected="selected" disabled>select password length:</option>
         <option value="8">8</option>
@@ -36,6 +41,8 @@
     <input type="submit" value="submit" />
 </form>
         {% if password %}
-<p> passwor is<br /> {{password}}</p>
+<div class="alert alert-success" role="alert">
+    passwor is<br />{{password}}
+</div>
         {% endif %}
 {% endblock %}
